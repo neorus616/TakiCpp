@@ -11,10 +11,11 @@ private:
 	Card current;
 	vector<Player> players;
 	void gameOver();
-	Game() :turn(0), direction(1), game(false), num_of_players(-1) {};
 
 public:
 	void start();
+	Game() :turn(0), direction(1), game(false), num_of_players(-1) {};
+
 };
 #endif
 

@@ -14,12 +14,16 @@ void Game::start(){
     int num_of_cards = 0;
     cout << "How many players?" << endl;
     cin >> this->num_of_players;
-    if (this->num_of_players <= 0)
-        throw "illegal number! please enter a positive number";
+    if (this->num_of_players <= 0){
+        cout << "illegal number! please enter a positive number";
+        return;
+    }
     cout << "How many cards?" << endl;
 	cin >> num_of_cards;
-    if(num_of_cards <= 0)
-        throw "illegal number! please enter a positive number";
+    if(num_of_cards <= 0){
+        cout << "illegal number! please enter a positive number";
+        return;
+    }
     for(size_t i = 1; i < this->num_of_players+1; ++i)
     {
         string name;
