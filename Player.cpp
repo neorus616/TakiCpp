@@ -15,13 +15,38 @@
 */
 Player::Player(string name, int num_of_cards):name(name),num_of_cards(num_of_cards){
 		for (size_t i = 0; i < num_of_cards; i++)
-			cards.push_back(generate_card());
+			this->cards.push_back(generate_card());
 	}
 
+/**
+* Player copy constructor.
+* 
+* @param player: other player
+* @return Player object
+*/
+Player::Player(const Player& other){
+        this->name = other.name;
+		this->num_of_cards = other.num_of_cards;
+        for (size_t i = 0; i < num_of_cards; i++)
+            this->cards.push_back(other.cards.at(i));
+	}
+
+/**
+* Player empty constructor.
+* 
+* @return Player object
+*/
+Player::Player():name("empty"),num_of_cards(0){}
+
+/**
+* This function will perform the players turn.
+* 
+* @return true if played, false if took a card.
+*/
 bool Player::play(Card& card){
     cout << "current: " << card << endl;
 	cout << this->name + ", your turn -" << endl;
-    cout << "Your cards:";
+    cout << "Your cards: ";
     for(size_t i = 0; i < num_of_cards; i++)
     {
 		cout << "(" + to_string((long long)(i + 1)) + ")" << this->cards.at(i) << " ";

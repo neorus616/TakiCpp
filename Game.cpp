@@ -7,8 +7,11 @@
 */
 #include "Game.h"
 
+/**
+* This function will initialize the game and play it.
+*/
 void Game::start(){
-    size_t num_of_cards = 0;
+    int num_of_cards = 0;
     cout << "How many players?" << endl;
     cin >> this->num_of_players;
     if (this->num_of_players <= 0)
@@ -36,20 +39,16 @@ void Game::start(){
                     break;
                 case CD:
                     direction = -direction;
-                   // turn =+ direction;
                     turn = (num_of_players + turn + direction) % num_of_players;
                     cout << turn;
                     break;
                 case STOP:
-                   // turn += 2;
                     turn = (num_of_players + turn + 2*direction) % num_of_players;
                     break;
                 default:
                     turn = (num_of_players + turn + direction) % num_of_players;
                     break;
             }
-        } else {
-            turn = (num_of_players + turn + direction) % num_of_players;
-        }
+        } else turn = (num_of_players + turn + direction) % num_of_players;
     }
 }

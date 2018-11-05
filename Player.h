@@ -10,13 +10,12 @@ private:
 	int num_of_cards; //Amount of cards
 	vector<Card> cards; //vector of cards
 
-
 public:
-	Player();
 	Player(string name, int num_of_cards);
+	Player();
+	Player(const Player&);
 	string getName(); 
 	bool is_winner();
 	bool play(Card&);
-
 };
 #endif
