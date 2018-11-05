@@ -12,8 +12,8 @@ private:
 
 
 public:
-	
-	Player(string name, int num_of_cards); 
+	Player();
+	Player(string name, int num_of_cards);
 	string getName(); 
 	bool is_winner();
 	bool play(Card&);

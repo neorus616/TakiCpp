@@ -28,10 +28,10 @@ bool Player::play(Card& card){
     }
     cout << endl;
     size_t choice;
-    cin >> choice;
     while(true){
+        cin >> choice;
         if(choice <= num_of_cards && choice > 0){
-            Card chosenCard = this->cards.at(choice);
+            Card chosenCard = this->cards.at(choice-1);
             if(card.is_leggal(chosenCard)){
                 card = chosenCard;
                 this->cards.erase(cards.begin() + choice - 1);
