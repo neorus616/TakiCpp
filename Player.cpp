@@ -18,7 +18,7 @@ Player::Player(string name, int num_of_cards):name(name),num_of_cards(num_of_car
 			cards[i]=generate_card();
 	}
 
-bool Player::play(Card&){
+bool Player::play(Card& card){
 
 }
 

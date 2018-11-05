@@ -5,11 +5,15 @@
 class Game {
 private:
 	//private members and functions
-	
-	vector<Player> v_players;
+	int turn;
+	int direction;
+	size_t num_of_players;
+	bool game;
+	Card current;
+	vector<Player> players;
 public:
 	//public members and functions
-
+	Game() :turn(0), direction(1), game(false),num_of_players(-1) {};
 	void start();
 };
 #endif
