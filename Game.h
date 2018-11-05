@@ -11,6 +11,7 @@ private:
 	bool game;
 	Card current;
 	vector<Player> players;
+	void gameOver();
 public:
 	//public members and functions
 	Game() :turn(0), direction(1), game(false),num_of_players(-1) {};

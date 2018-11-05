@@ -14,12 +14,38 @@
 * @return Player object
 */
 Player::Player(string name, int num_of_cards):name(name),num_of_cards(num_of_cards){
-		for (size_t i = 0; i < cards.size(); i++)
-			cards[i]=generate_card();
+		for (size_t i = 0; i < num_of_cards; i++)
+			cards.push_back(generate_card());
 	}
 
 bool Player::play(Card& card){
-
+    cout << "current: " << card << endl;
+	cout << this->name + ", your turn -" << endl;
+    cout << "Your cards:";
+    for(size_t i = 0; i < num_of_cards; i++)
+    {
+		cout << "(" + to_string((long long)(i + 1)) + ")" << this->cards.at(i) << " ";
+    }
+    cout << endl;
+    size_t choice;
+    cin >> choice;
+    while(true){
+        if(choice <= num_of_cards && choice > 0){
+            Card chosenCard = this->cards.at(choice);
+            if(card.is_leggal(chosenCard)){
+                card = chosenCard;
+                this->cards.erase(cards.begin() + choice - 1);
+                this->num_of_cards--;
+                return true;
+            } else {
+                cout << "You can't put " << chosenCard << " on " << card << endl;
+            }
+        } else {
+            this->cards.push_back(generate_card());
+            this->num_of_cards++;
+            return false;
+            }
+    }
 }
 
 /**
