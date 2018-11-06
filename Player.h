@@ -17,6 +17,6 @@ public:
 	string getName(); 
 	bool is_winner();
 	bool play(Card&);
-	~Player();
+	~Player(){};
 };
 #endif

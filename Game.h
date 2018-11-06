@@ -18,7 +18,7 @@ private:
 public:
 	void start();
 	Game() :turn(0), direction(1), game(false), num_of_players(-1) {};
-	~Game();
+	~Game(){};
 };
 #endif
 
