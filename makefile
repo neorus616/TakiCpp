@@ -16,5 +16,8 @@ Player.o: Player.cpp Player.h
 main.o: main.cpp 
 	$(CXX) $(CXXFLAGS) -c main.cpp -o main.o
 
+valgrind:
+	valgrind --leak-check=full --show-leak-kinds=all ./a.out
+
 clean:
 	rm *.o a.out

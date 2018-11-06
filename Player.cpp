@@ -1,8 +1,8 @@
 /**
-    Advanced programming and C ++ language.
+    Advanced programming and C++ language.
     Player.cpp
 
-    @author Constantin Kazakov
+    @author Constantine Kazakov
     @version 5.11.18
 */
 #include "Player.h"
